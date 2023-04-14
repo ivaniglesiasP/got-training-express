@@ -17,4 +17,12 @@ export const addCharacter = (newCharacterEntry: NewCharacterEntry): Character =>
   };
   characters.push(newCharacter);
   return newCharacter;
-}; 
+};
+
+export const deleteById = (id: Number): string | null => {
+  const characterIndex = characters.findIndex((character) => character.id === id);
+  if (characterIndex === -1) return null;
+
+  characters.splice(characterIndex, 1);
+  return `Character with id : ${id} has been deleted ✓`;
+};

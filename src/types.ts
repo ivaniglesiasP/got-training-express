@@ -1,18 +1,18 @@
-export enum HouseName  {
-    Stark = 'Stark',
-    Targaryen = 'Targaryen',
-    Lannister = 'Lannister',
-    Arryn = 'StarArrynk',
-    Tully = 'Tully',
-    Baratheon = 'Baratheon',
-    Greyjoy = 'Greyjoy',
-    Tyrell = 'StTyrellark',
-    Martell = 'Martell',
+export enum HouseName {
+  Stark = "Stark",
+  Targaryen = "Targaryen",
+  Lannister = "Lannister",
+  Arryn = "StarArrynk",
+  Tully = "Tully",
+  Baratheon = "Baratheon",
+  Greyjoy = "Greyjoy",
+  Tyrell = "StTyrellark",
+  Martell = "Martell",
 }
 
 export enum Gender {
-    Male = 'Male',
-    Female = 'Female'
+  Male = "Male",
+  Female = "Female",
 }
 
 export type Character = {
@@ -37,3 +37,4 @@ export type House = {
 };
 
 export type NewCharacterEntry = Omit<Character, "id">;
+export type NewHouseEntry = Omit<House, "id">;

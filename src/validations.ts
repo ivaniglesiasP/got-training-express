@@ -1,4 +1,4 @@
-import { Gender, HouseName, NewCharacterEntry } from "./types";
+import { Gender, HouseName, NewCharacterEntry, NewHouseEntry } from "./types";
 
 const isString = (param: any): boolean => typeof param === "string";
 
@@ -34,4 +34,16 @@ export const toNewCharacterEntry = (characterFromRquest: any) => {
   };
 
   return newCharacter;
+};
+
+export const toNewHouseEntry = (houseFromRequest: any) => {
+  console.log(houseFromRequest.houseName)
+  const newHouse: NewHouseEntry = {
+    houseName: parseHouseName(houseFromRequest.houseName),
+    title: parseStringParams(houseFromRequest.title, "title"),
+    blazon: parseStringParams(houseFromRequest.blazon, "blazon"),
+    words: parseStringParams(houseFromRequest.words, "words"),
+    seat: parseStringParams(houseFromRequest.seat, "seat"),
+  };
+  return newHouse;
 };
